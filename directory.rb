@@ -1,15 +1,15 @@
 students = [
-  "Dr. Hannibal Lecter",
-  "Darth Vader", 
-  "Nurse Ratched",
-  "Michael Corleone",
-  "Alex DeLarge",
-  "The Wicked Witch of the West",
-  "Terminator",
-  "Freddy Krueger",
-  "The Joker",
-  "Joffrey Baratheon",
-  "Norman Bates"
+  {name: "Dr. Hannibal Lecter", cohort: :november},
+  {name: "Darth Vader", cohort: :november},
+  {name: "Nurse Ratched", cohort: :november},
+  {name: "Michael Corleone", cohort: :november},
+  {name: "Alex DeLarge", cohort: :november},
+  {name: "The Wicked Witch of the West", cohort: :november},
+  {name: "Terminator", cohort: :november},
+  {name: "Freddy Krueger", cohort: :november},
+  {name: "The Joker", cohort: :november},
+  {name: "Joffrey Baratheon", cohort: :november},
+  {name: "Norman Bates", cohort: :november}
 ]
 
 @divider = "------------------------"
@@ -19,15 +19,17 @@ def print_header
   puts @divider
 end
 
-def print(names)
-  names.each { |name| puts name }
+def print_list(students)
+  students.each { |student| 
+    puts "#{student[:name]} (#{student[:cohort]} cohort)" 
+  }
 end
 
-def print_footer(names)
+def print_footer(students)
   puts @divider
-  puts "Overall, we have #{names.length} great students."
+  puts "Overall, we have #{students.length} great students."
 end
 
 print_header()
-print(students)
+print_list(students)
 print_footer(students)
